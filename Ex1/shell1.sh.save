@@ -1,0 +1,5 @@
+#!/bin/bash
+echo "general.sh start process";
+echo "general.sh start process";
+
+echo "Hello world";
