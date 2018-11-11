@@ -10,8 +10,8 @@ function processesCreator(){
 	a=$(($a+$1))
 	echo "Process - ${a}"
 	processesCreator $a &
+sleep 1
 	processesCreator $a &
-	sleep 1
 }
 
 processesCreator 0
