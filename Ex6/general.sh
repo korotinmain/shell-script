@@ -1,17 +1,23 @@
 #!/bin/bash
 cd ~/Desktop/OperationSystems/Ex6
-
+counter=0
 function processesCreator(){
-	a=1
-	if [ $1 -ge 5 ]
+	i=$1
+	j=$2
+	if [ $i -le 4 ] 
 	then
-		return
+		echo "P$i _ $j"
+		((i++))
+		{
+			((j=(j*2)-1))
+			processesCreator $i $j &
+		};
+		{
+			((j++))
+			processesCreator $i $j &
+		}
 	fi
-	a=$(($a+$1))
-	echo "Process - ${a}"
-	processesCreator $a &
-sleep 1
-	processesCreator $a &
+	
 }
 
-processesCreator 0
+processesCreator 0 1
